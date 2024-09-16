@@ -6,15 +6,15 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build && npx prisma generate && vercel deploy --prod",
+    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "NODE_ENV=development nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "NODE_ENV=production node dist/main",
     "seed": "tsx prisma/seed/seed.ts",
-    "postinstall": "prisma generate",
-    "deploy": "npm run build && npx prisma generate && vercel deploy --prod"
+    "postinstall": "npx prisma generate",
+    "deploy": "npx prisma generate && npm run build"
   },
   "dependencies": {
     "@nestjs/common": "^10.3.8",
